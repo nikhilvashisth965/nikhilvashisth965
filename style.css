@@ -1516,6 +1516,15 @@ a.contact-value:hover {
     bottom: 20px;
     left: 20px;
   }
+
+  .carousel-profile-image {
+    max-width: 200px;
+  }
+
+  .image-body {
+    padding: 16px;
+    min-height: 200px;
+  }
 }
 
 @media (max-width: 481px) {
@@ -1585,6 +1594,98 @@ a.contact-value:hover {
   animation-delay: 0.6s;
 }
 
-.hero-code {
+.hero-carousel {
+  position: relative;
   animation: fadeInUp 0.9s 0.4s ease both;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.image-window {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.image-header {
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-filename {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.image-body {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.carousel-profile-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 196, 255, 0.3);
+  transition: var(--transition);
+}
+
+.carousel-profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 196, 255, 0.4);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.indicator.active {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 196, 255, 0.6);
+}
+
+.indicator:hover {
+  background: var(--accent);
+  opacity: 0.7;
 }

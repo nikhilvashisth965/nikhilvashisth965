@@ -301,13 +301,63 @@ document.querySelectorAll('.project-card, .skill-card').forEach(card => {
   });
 });
 
+/* ---- Hero Carousel ---- */
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselIndicators = document.querySelectorAll('.indicator');
+let currentSlide = 0;
+let carouselInterval;
+
+function showSlide(index) {
+  // Hide all slides
+  carouselSlides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+
+  // Remove active class from all indicators
+  carouselIndicators.forEach(indicator => {
+    indicator.classList.remove('active');
+  });
+
+  // Show the selected slide
+  carouselSlides[index].classList.add('active');
+  carouselIndicators[index].classList.add('active');
+  currentSlide = index;
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % carouselSlides.length;
+  showSlide(currentSlide);
+}
+
+function startCarousel() {
+  carouselInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+}
+
+function stopCarousel() {
+  clearInterval(carouselInterval);
+}
+
+// Add click event listeners to indicators
+carouselIndicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    stopCarousel();
+    showSlide(index);
+    startCarousel(); // Restart auto-play
+  });
+});
+
+// Start the carousel
+if (carouselSlides.length > 0) {
+  startCarousel();
+}
+
 /* ---- Parallax subtle on hero ---- */
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const heroContent = document.querySelector('.hero-content');
-  const heroCode = document.querySelector('.hero-code');
+  const heroCarousel = document.querySelector('.hero-carousel');
   if (heroContent && scrollY < window.innerHeight) {
     heroContent.style.transform = `translateY(${scrollY * 0.08}px)`;
-    if (heroCode) heroCode.style.transform = `translateY(${scrollY * -0.04}px)`;
+    if (heroCarousel) heroCarousel.style.transform = `translateY(${scrollY * -0.04}px)`;
   }
 });

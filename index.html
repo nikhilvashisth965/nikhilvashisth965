@@ -95,18 +95,20 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-code">
-                <div class="code-window">
-                    <div class="code-header">
-                        <div class="code-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                        </div>
-                        <span class="code-filename">Nikhil.php</span>
-                    </div>
-                    <div class="code-body">
-                        <pre><code><span class="code-keyword">class</span> <span class="code-var">Nikhil</span> <span class="code-keyword">extends</span> <span class="code-var">Developer</span> {
+            <div class="hero-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active" data-slide="code">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="dot dot-red"></span>
+                                    <span class="dot dot-yellow"></span>
+                                    <span class="dot dot-green"></span>
+                                </div>
+                                <span class="code-filename">Nikhil.php</span>
+                            </div>
+                            <div class="code-body">
+                                <pre><code><span class="code-keyword">class</span> <span class="code-var">Nikhil</span> <span class="code-keyword">extends</span> <span class="code-var">Developer</span> {
   <span class="code-keyword">public</span> <span class="code-prop">$experience</span> <span class="code-op">=</span> <span class="code-string">"4+ Years"</span>;
   <span class="code-keyword">public</span> <span class="code-prop">$specialized</span> <span class="code-op">=</span> [<span class="code-string">"PHP"</span>, <span class="code-string">"Laravel"</span>, <span class="code-string">"CodeIgniter"</span>, <span class="code-string">"MySQL"</span>];
   
@@ -114,7 +116,28 @@
     <span class="code-keyword">return</span> <span class="code-var">$this</span>-&gt;<span class="code-prop">craftSolution</span>($requirements);
   }
 }</code></pre>
+                            </div>
+                        </div>
                     </div>
+                    <div class="carousel-slide" data-slide="image">
+                        <div class="image-window">
+                            <div class="image-header">
+                                <div class="code-dots">
+                                    <span class="dot dot-red"></span>
+                                    <span class="dot dot-yellow"></span>
+                                    <span class="dot dot-green"></span>
+                                </div>
+                                <span class="image-filename">Profile.jpg</span>
+                            </div>
+                            <div class="image-body">
+                                <img src="Nikhil.jpeg" alt="Nikhil Vashisth" class="carousel-profile-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="code"></button>
+                    <button class="indicator" data-slide="image"></button>
                 </div>
             </div>
         </div>
